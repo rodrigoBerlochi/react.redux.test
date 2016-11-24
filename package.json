@@ -1,7 +1,8 @@
 {
-  "name": "react.redux test app",
+  "name": "react.redux.test",
   "version": "1.0.0",
   "description": "",
+  "main": "app.js",
   "scripts": {
     "corsproxy": "export CORSPROXY_PORT=8889 || set CORSPROXY_PORT=8889 && node node_modules/corsproxy/bin/corsproxy",
     "http-server": "node node_modules/http-server/bin/http-server -p 8888 -c-1",
@@ -17,8 +18,16 @@
     "test": "node node_modules/npm-run-all/bin/npm-run-all end-to-end unit:coverage",
     "test:travis": "node node_modules/npm-run-all/bin/npm-run-all unit:coveralls end-to-end"
   },
-  "author": "",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigoBerlochi/react.redux.test.git"
+  },
+  "author": "rb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigoBerlochi/react.redux.test/issues"
+  },
+  "homepage": "https://github.com/rodrigoBerlochi/react.redux.test#readme",
   "devDependencies": {
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.1.0",
@@ -50,9 +59,7 @@
     "redux": "^3.5.2",
     "redux-actions": "^0.10.0",
     "redux-logger": "^2.6.1",
-    "redux-thunk": "^2.1.0",
-    "underscore": "^1.8.3",
-    "validate.js": "^0.10.0"
+    "redux-thunk": "^2.1.0"
   },
   "dependencies": {
     "corsproxy": "^1.4.0",
@@ -61,14 +68,16 @@
   },
   "nyc": {
     "include": [
-      "Simulator/actions/*.js",
-      "Simulator/components/*.jsx",
-      "Simulator/reducers/*.js",
-      "Simulator/store/*.js",
-      "Simulator/utils/*.js"
+      "js/build/src/actions/*.js",
+      "js/build/src/components/*.jsx",
+      "js/build/src/reducers/*.js",
+      "js/build/src/store/*.js",
+      "js/build/src/utils/*.js"
     ],
     "extension": [
       ".jsx"
     ]
   }
 }
+
+
